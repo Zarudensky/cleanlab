@@ -37,8 +37,8 @@ export default function Header() {
           <Link className={styles.link} href="/learn">Learn</Link>
           <Link className={styles.link} href="/community">Community</Link>
         </nav>
-        <button className={`${styles.header__btn} ${styles.light__btn}`} type="button">Get in touch</button>
-        <button className={`${styles.header__btn} ${styles.hard__btn}`} type="button">Try for free</button>
+        <button className={styles.light__btn} type="button">Get in touch</button>
+        <button className={styles.hard__btn} type="button">Try for free</button>
       </div>
     </header>
   )
