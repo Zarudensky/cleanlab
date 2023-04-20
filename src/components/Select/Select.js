@@ -1,16 +1,16 @@
 import styles from './Select.module.css'
 import Link from 'next/link'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 
 export default function Select({ label, options, onSelectOption }) {
   const [isOpen, setIsOpen] = useState(false)
   const selectRef = useRef(null)
 
-  const handleClickOutside = (event) => {
+  const handleClickOutside = useCallback((event) => {
     if (selectRef.current && !selectRef.current.contains(event.target)) {
       setIsOpen(false)
     }
-  }
+  }, [selectRef, setIsOpen])
 
   const handleSelectOption = () => {
     setIsOpen(false)
