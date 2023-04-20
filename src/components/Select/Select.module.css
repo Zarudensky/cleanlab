@@ -1,20 +1,62 @@
 .select {
-    height: 100%;
-    padding: 0 40px;
-    border: none;
-    border-radius: 0;
-    background-color: transparent;
+  height: 100%;
+  padding: 0 40px;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.select__label {
+  color: var(--hard-color);
+  text-transform: uppercase;
+}
+
+.select__options {
+  display: none;
+  position: absolute;
+  z-index: 99;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  border: 1px solid #ddd;
+  padding: 12px 16px;
+}
+
+.select__options.open {
+  display: block;
+  animation-name: slide-in;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.select__option {
+  color: #555;
+}
+
+@media (max-width: 1000px) {
+  .select {
+    cursor: default;
+  }
+  .select__options {
+    display: block;
+    position: relative;
+  }
+  .select__label {
+    pointer-events: none;
+  }
+  .select__option {
     cursor: pointer;
   }
-  
-  .select__label {
-    color: #555;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  
-  .select__options {
-    color: #555;
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .select__option {
-    color: #555;
-  }
+}

@@ -1,18 +1,20 @@
 :root {
   --main-color: #52A894;
-  --main-bg: #fff;
+  --hard-color: #3F3F3F;
+  --soft-color: #7A7A7A;
+  --light-color: #FFFFFF;
 
   --header-height: 68px;
-  --main-height: calc(100vh - var(--header-height) - var(--footer-height));
   --footer-height: 20px;
-
-  --title-ft: #333;
-  --description-ft: #333;
+  --main-height: calc(100vh - var(--header-height) - var(--footer-height));
 
   --font-montserrat: 'Montserrat';
   --font-roboto: 'Roboto';
 
-  --max-width: 1200px;
+  --desktop-max-width: 1200px;
+  --mobile-max-width: 1000px;
+
+  --br: 8px;
 }
 
 * {
@@ -34,4 +36,19 @@ main {
   align-items: center;
   min-height: var(--main-height);
   font-family: var(--font-montserrat);
+  background-color: var(--min-color);
+}
+
+button {
+  border: none;
+  border-radius: var(--br);
+  font-family: var(--font-montserrat);
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--hard-color);
+  font-family: var(--font-roboto);
 }
