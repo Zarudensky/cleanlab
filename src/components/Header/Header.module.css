@@ -29,27 +29,6 @@
   cursor: pointer;
 }
 
-.select {
-  height: 100%;
-  padding: 0 40px;
-  border: none;
-  border-radius: 0;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-.select__title {
-  color: #555;
-}
-
-.select__options {
-  color: #555;
-}
-
-.select__option {
-  color: #555;
-}
-
 .light__btn {
   margin-right: 30px;
 }
