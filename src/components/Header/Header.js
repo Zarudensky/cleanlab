@@ -2,13 +2,13 @@ import styles from './Header.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import Select from '../Select/Select'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const selectRef = useRef(null)
 
-  const handleClickOutside = (event) => {
+  const handleClickOutside = useCallback((event) => {
     if (
       selectRef.current &&
       !selectRef.current.contains(event.target) &&
@@ -16,11 +16,11 @@ export default function Header() {
     ) {
       setIsOpen(false)
     }
-  }
+  }, [])
 
-  const handleSelectOption = () => {
+  const handleSelectOption = useCallback(() => {
     setIsOpen(false)
-  }
+  }, [])
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside)
